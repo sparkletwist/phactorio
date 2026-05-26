@@ -1,12 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.1
+  Changes:
+    - Tweaks to improved glass recipe.
+    - Added setting to restore simple glass.
+---------------------------------------------------------------------------------------------------
 Version: 0.2.0
   Changes:
     - Crushing Industry: Internally removed `s6x-simple-glass` and added `s6x-improved-glass`.
     - Fixed potential load order issue with Bluetonium.
-  Compatibility:
     - Added support for Alloy Smelting's kilns.
-    - Alloy Smelting: Remove Acid-treated iron, instead adding  to Acid-treated steel smelting.
-    - Alloy Smelting: Remove glass batch, instead adding  to Improved glass casting.
+    - Removed superfluous intermediates when Alloy Smelting is in use.
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.1
   Changes:

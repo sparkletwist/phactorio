@@ -7,12 +7,12 @@ if (mods['crushing-industry']) then
 	end
 	
 	-- Glass changes
-	if (settings.startup["crushing-industry-glass"].value) then
-		-- if (mods['alloy-smelting'] and settings.startup["alloy-smelting-glass"].value) then
-		-- 	fds_technology.replace_unlock("kiln-smelting", "glass", "s6x-simple-glass")
-		-- else
-		-- 	fds_technology.replace_unlock("electronics", "glass", "s6x-simple-glass")
-		-- end
+	if (settings.startup["crushing-industry-glass"].value and settings.startup["s6x-ph-restore-simple-glass"].value) then
+		if (mods['alloy-smelting'] and settings.startup["alloy-smelting-glass"].value) then
+			fds_technology.replace_unlock("kiln-smelting", "glass", "s6x-simple-glass")
+		else
+			fds_technology.replace_unlock("electronics", "glass", "s6x-simple-glass")
+		end
 	end
 end
 

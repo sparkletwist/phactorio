@@ -410,8 +410,8 @@ if (mods['crushing-industry'] and settings.startup["crushing-industry-glass"].va
 			prerequisites = {"s6x-electrolysis"},
 			effects = {
 				{ type = "unlock-recipe", recipe = "s6x-glass-batch" },
-				{ type = "unlock-recipe", recipe = "s6x-improved-glass" },
-				{ type = "change-recipe-productivity", recipe = "s6x-improved-glass", change=0.2, hidden=true}
+				{ type = "unlock-recipe", recipe = (settings.startup["s6x-ph-restore-simple-glass"].value and "glass") or "s6x-improved-glass" },
+				{ type = "change-recipe-productivity", recipe = (settings.startup["s6x-ph-restore-simple-glass"].value and "glass") or "s6x-improved-glass", change=0.2, hidden=true}
 
 			},
 			unit = {

@@ -1,19 +1,35 @@
 if (not mods['crushing-industry']) then return end
 if (not settings.startup["crushing-industry-glass"].value) then return end
 
+local old_simple = settings.startup["s6x-ph-restore-simple-glass"].value
+
 local fds_recipe = require("__fdsl__.lib.recipe")
 
-local glass = data.raw.recipe["glass"]
-local improved_glass = util.table.deepcopy(glass)
+local simple_glass = data.raw.recipe["glass"]
+local improved_glass = util.table.deepcopy(data.raw.recipe["glass"])
 
-glass.main_product = "glass"
-glass.icon = nil
-fds_recipe.modify_ingredient(glass, "sand", {amount=4})
-fds_recipe.modify_result(glass, "glass", {amount=1})
-data:extend({glass})
+local sand_amount = 5
 
-improved_glass.name = "s6x-improved-glass"
-improved_glass.main_product = "glass"
+if (old_simple) then
+	simple_glass.name = "s6x-simple-glass"
+	simple_glass.main_product = "glass"
+	simple_glass.icon = nil
+	simple_glass.icons = {
+		{icon=data.raw.item["sand"].icon, scale = 0.4, shift = {-12, -12}},
+		{icon=data.raw.item["glass"].icon, draw_background = true }	
+	}
+end
+simple_glass.energy_required = 6.4
+fds_recipe.modify_ingredient(simple_glass, "sand", {amount=4})
+fds_recipe.modify_result(simple_glass, "glass", {amount=1})
+data:extend({simple_glass})
+
+if (old_simple) then
+	improved_glass.name = "glass"
+else
+	improved_glass.name = "s6x-improved-glass"
+	improved_glass.main_product = "glass"
+end
 improved_glass.always_show_products = true
 fds_recipe.modify_result(improved_glass, "glass", {amount=1})
 improved_glass.custom_tooltip_fields = {
@@ -23,20 +39,25 @@ improved_glass.custom_tooltip_fields = {
 	}
 }
 
-if (PHACTORIO.kiln_smelting) then
-	fds_recipe.modify_ingredient(improved_glass, "sand", {amount=4})
+if (PHACTORIO.kiln_smelting and not old_simple) then
+	fds_recipe.modify_ingredient(improved_glass, "sand", {amount=sand_amount})
 	fds_recipe.add_ingredient(improved_glass, {type="item", name="ph-naoh", amount=1})
+	fds_recipe.modify_result(improved_glass, "glass", {amount=2})
 	improved_glass.icons = {
 		{icon=data.raw.item["ph-naoh"].icon, scale = 0.4, shift = {-12, -12}},
 		{icon=data.raw.item["glass"].icon, draw_background = true }
 	}
 	improved_glass.always_show_products = true
 else
-	improved_glass.ingredients = {{type="item", name="s6x-glass-batch", amount=2}}
-	improved_glass.icons = {
-		{icon="__pHactorio__/graphics/icons/glass-batch.png", scale = 0.4, shift = {-12, -12}},
-		{icon=data.raw.item["glass"].icon, draw_background = true }
-	}
+	improved_glass.energy_required = 3.2
+	improved_glass.ingredients = {{type="item", name="s6x-glass-batch", amount=1}}
+	
+	if (not old_simple) then
+		improved_glass.icons = {
+			{icon="__pHactorio__/graphics/icons/glass-batch.png", scale = 0.4, shift = {-12, -12}},
+			{icon=data.raw.item["glass"].icon, draw_background = true }
+		}
+	end
 	data:extend({
 		{
 			type = "item",
@@ -55,7 +76,7 @@ else
 			enabled = false,
 			ingredients =
 			{
-				{type = "item", name = "sand", amount = 4},
+				{type = "item", name = "sand", amount = sand_amount},
 				{type = "item", name = "ph-naoh", amount = 1}
 			},
 			results = {
