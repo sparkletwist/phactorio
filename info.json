@@ -1,0 +1,23 @@
+{
+	"name": "pHactorio",
+	"version": "0.1.2",
+	"title": "pHactorio",
+	"author": "S6X",
+	"description": "Adds acids and bases, and various associated recipes.",
+	"factorio_version": "2.0",
+	"contact": "S6X",
+	"homepage": "",
+	"dependencies":[
+    		"base >= 2.0.76",
+		"fdsl >= 0.3.4",
+		"? space-age >= 2.0.76",
+		"? Voidcraft >= 2.8.0",
+		"? IridescentIndustry >= 0.8.2",
+		"? Bluetonium >= 2.7.5",
+		"? scrap-chemistry >= 0.6.2",
+		"? crushing-industry >= 0.5.10",
+		"? alloy-smelting >= 0.6.1",
+		"(?) quality",
+		"(?) any-planet-start"
+	]
+}

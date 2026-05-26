@@ -1,0 +1,13 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.1.2
+  Changes:
+    - Added support for Alloy Smelting's kilns.
+    - Fixed potential load order issue with Bluetonium.
+---------------------------------------------------------------------------------------------------
+Version: 0.1.1
+  Changes:
+    - Added optional recipes for getting rid of water and steam.
+---------------------------------------------------------------------------------------------------
+Version: 0.1.0
+  Changes:
+    - Initial release.
