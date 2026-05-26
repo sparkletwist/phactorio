@@ -410,7 +410,9 @@ if (mods['crushing-industry'] and settings.startup["crushing-industry-glass"].va
 			prerequisites = {"s6x-electrolysis"},
 			effects = {
 				{ type = "unlock-recipe", recipe = "s6x-glass-batch" },
-				{ type = "unlock-recipe", recipe = "glass" },	 
+				{ type = "unlock-recipe", recipe = "s6x-improved-glass" },
+				{ type = "change-recipe-productivity", recipe = "s6x-improved-glass", change=0.2, hidden=true}
+
 			},
 			unit = {
 				ingredients =
@@ -424,7 +426,11 @@ if (mods['crushing-industry'] and settings.startup["crushing-industry-glass"].va
 		},
 	})
 
-	fds_technology.add_prereq("rocket-silo", "s6x-glass-improved")	
+	fds_technology.add_prereq("rocket-silo", "s6x-glass-improved")
+
+	if (PHACTORIO.kiln_smelting) then
+		fds_technology.remove_unlock("s6x-glass-improved", "s6x-glass-batch")
+	end
 end
 
 fds_technology.add_prereq("plastics", "s6x-electrolysis")
@@ -465,6 +471,13 @@ end
 
 if (PHACTORIO.thorium229) then
 	fds_technology.add_prereq("s6x-thorium-electronics", "s6x-nitric-acid")
+end
+
+if (PHACTORIO.kiln_smelting) then
+	local steel_acid_technology = fds_technology.find("s6x-steel-acid-treatment")
+	fds_technology.add_cost_ingredient(steel_acid_technology, "chemical-science-pack")
+	fds_technology.add_prereq(steel_acid_technology, "advanced-material-processing-2")
+	fds_technology.remove_unlock(steel_acid_technology, "s6x-pickled-iron")
 end
 
 if (mods['Voidcraft']) then

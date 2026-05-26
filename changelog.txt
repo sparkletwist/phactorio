@@ -1,8 +1,12 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.1.2
+Version: 0.2.0
   Changes:
-    - Added support for Alloy Smelting's kilns.
+    - Crushing Industry: Internally removed `s6x-simple-glass` and added `s6x-improved-glass`.
     - Fixed potential load order issue with Bluetonium.
+  Compatibility:
+    - Added support for Alloy Smelting's kilns.
+    - Alloy Smelting: Remove Acid-treated iron, instead adding  to Acid-treated steel smelting.
+    - Alloy Smelting: Remove glass batch, instead adding  to Improved glass casting.
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.1
   Changes:

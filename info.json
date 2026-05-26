@@ -1,6 +1,6 @@
 {
 	"name": "pHactorio",
-	"version": "0.1.2",
+	"version": "0.2.0",
 	"title": "pHactorio",
 	"author": "S6X",
 	"description": "Adds acids and bases, and various associated recipes.",
@@ -8,7 +8,7 @@
 	"contact": "S6X",
 	"homepage": "",
 	"dependencies":[
-    		"base >= 2.0.76",
+		"base >= 2.0.76",
 		"fdsl >= 0.3.4",
 		"? space-age >= 2.0.76",
 		"? Voidcraft >= 2.8.0",

@@ -17,6 +17,11 @@ if (mods["crushing-industry"] and settings.startup["crushing-industry-coal"].val
 PHACTORIO.stone_or_sand_ingredient = "stone"
 if (mods["crushing-industry"]) then PHACTORIO.stone_or_sand_ingredient = "sand" end
 
+PHACTORIO.kiln_smelting = false
+if (mods["alloy-smelting"] and settings.startup["alloy-smelting-create-kilns"].value) then
+	PHACTORIO.kiln_smelting = true
+end
+
 PHACTORIO.glass = false
 if (mods["crushing-industry"] and settings.startup["crushing-industry-glass"].value) then
 	PHACTORIO.glass = true
