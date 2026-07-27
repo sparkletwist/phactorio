@@ -15,7 +15,7 @@ data:extend({
 			{ icon = data.raw.fluid["water"].icon },
 			{ icon = "__base__/graphics/icons/shapes/shape-diagonal-cross.png", tint = { 1.0, 0.5, 0.5, 0.5 } }
 		},
-		category = "chemistry",
+		categories = {"chemistry"},
 		subgroup = "water-voiding",
 		order = "a[water]",
 		enabled = true,
@@ -46,7 +46,7 @@ data:extend({
 			{ icon = data.raw.fluid["steam"].icon },
 			{ icon = "__base__/graphics/icons/shapes/shape-diagonal-cross.png", tint = { 1.0, 0.5, 0.5, 0.5 } }
 		},
-		category = "chemistry",
+		categories = {"chemistry"},
 		subgroup = "water-voiding",
 		order = "b[steam]",
 		enabled = true,

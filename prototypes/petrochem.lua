@@ -32,7 +32,7 @@ if (mods['scrap-chemistry']) then
 	end
 	
 	fds_recipe.replace_result(naoh_processing, "sour-gas", "methane")
-	fds_recipe.replace_result(naoh_processing, "tar", {type="item", name="sulfur", amount=1, probability=0.15})
+	fds_recipe.replace_result(naoh_processing, "tar", {type="item", name="sulfur", amount=1, independent_probability=0.15})
 else	
 	naoh_processing.icon = "__pHactorio__/graphics/icons/naoh-basic-oil-processing.png"
 	fds_recipe.modify_result(naoh_processing, "petroleum-gas", {amount=60})
@@ -61,7 +61,7 @@ if (mods['scrap-chemistry']) then
 	naoh_adv_processing.icon = "__pHactorio__/graphics/icons/naoh-advanced-oil-processing-remix.png"
 	
 	fds_recipe.replace_result(naoh_adv_processing, "sour-gas", "methane")
-	fds_recipe.replace_result(naoh_adv_processing, "tar", {type="item", name="sulfur", amount=1, probability=0.2})
+	fds_recipe.replace_result(naoh_adv_processing, "tar", {type="item", name="sulfur", amount=1, independent_probability=0.2})
 else
 	naoh_adv_processing.icon = "__pHactorio__/graphics/icons/naoh-advanced-oil-processing.png"
 	fds_recipe.modify_result(naoh_adv_processing, "petroleum-gas", {amount=70})

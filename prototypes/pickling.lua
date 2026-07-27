@@ -21,8 +21,7 @@ for i,name in pairs(fruits) do
 	local pickle_rec = {
 		type = "recipe",
 		name = pickled_name,
-		category = "organic",
-		additional_categories = { "chemistry" },
+		categories = {"chemistry", "organic"},
 		subgroup = "agriculture-processes",
 		order = "a[seeds]-z[pickled]-a[pickling]-" .. p.order,
 		enabled = false,
@@ -110,8 +109,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "biter-egg-preserved",
-		category = "organic",
-		additional_categories = { "chemistry" },
+		categories = { "chemistry", "organic" },
 		subgroup = "agriculture-processes",
 		order = "c[eggs]-a[biter-egg]-a[ph]-a[preserved]",
 		enabled = false,

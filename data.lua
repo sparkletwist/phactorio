@@ -3,6 +3,11 @@ if (not PHACTORIO) then PHACTORIO = {} end
 PHACTORIO.acid_order = data.raw.fluid["sulfuric-acid"].order .. "-a[ph]-a[acids]"
 PHACTORIO.base_order = data.raw.item["sulfur"].order .. "-a[ph]-a[bases]"
 
+PHACTORIO.chemistry_or_cryogenics = {"chemistry"}
+if (mods["space-age"]) then
+	table.insert(PHACTORIO.chemistry_or_cryogenics, "cryogenics")
+end
+
 if (data.raw.recipe["sulfuric-acid"] and data.raw.recipe["sulfuric-acid"].order) then
 	PHACTORIO.recipe_order = data.raw.recipe["sulfuric-acid"].order .. "-a[ph]"
 else

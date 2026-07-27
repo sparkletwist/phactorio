@@ -13,7 +13,7 @@ if PHACTORIO.kiln_smelting then
 				{icon="__pHactorio__/graphics/icons/fluid/ph-hcl.png", shift={-12,-12}, scale=0.4},
 				{icon="__base__/graphics/icons/steel-plate.png", draw_background=true},
 			},
-			category = "kiln-smelting",
+			categories = {"kiln-smelting"},
 			enabled = false,
 			energy_required = 8,
 			ingredients = {
@@ -54,7 +54,7 @@ else
 		{
 			type = "recipe",
 			name = "s6x-pickled-iron",
-			category = "chemistry",
+			categories = {"chemistry"},
 			energy_required = 4,
 			enabled = false,
 			ingredients =
@@ -77,7 +77,7 @@ else
 		{
 			type = "recipe",
 			name = "s6x-steel-plate-from-pickled",
-			category = "smelting",
+			categories = {"smelting"},
 			enabled = false,
 			energy_required = 8,
 			ingredients = {{type = "item", name = "s6x-pickled-iron", amount = 5}},

@@ -33,7 +33,7 @@ if (not data.raw.recipe["salt"]) then
 		{
 			type = "recipe",
 			name = "salt",
-			category = "chemistry",
+			categories = {"chemistry"},
 			enabled = false,
 			auto_recycle = false,
 			energy_required = 6,
@@ -71,7 +71,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "s6x-electrolysis-process",
-		category = "ph-electrolysis",
+		categories = {"ph-electrolysis"},
 		enabled = false,
 		energy_required = 2,
 		ingredients =
@@ -102,7 +102,7 @@ if (mods['space-age']) then
 		{
 			type = "recipe",
 			name = "s6x-brine-electrolysis-process",
-			category = "ph-electrolysis",
+			categories = {"ph-electrolysis"},
 			enabled = false,
 			energy_required = 2,
 			ingredients =
@@ -111,7 +111,7 @@ if (mods['space-age']) then
 			},
 			results = {
 				{type = "item", name = "ph-naoh", amount = 5},
-				{type = "item", name = iron_ore_ingredient, amount = 1, probability = iron_ore_prob},
+				{type = "item", name = iron_ore_ingredient, amount = 1, independent_probability = iron_ore_prob},
 				{type = "fluid", name = "ph-hcl", amount = 50}
 			},
 			allow_productivity = true,
@@ -130,7 +130,7 @@ if (mods['space-age']) then
 		{
 			type = "recipe",
 			name = "s6x-vulcanus-electrolysis-process",
-			category = "ph-electrolysis",
+			categories = {"ph-electrolysis"},
 			enabled = false,
 			energy_required = 2,
 			
@@ -161,7 +161,7 @@ if (mods['space-age']) then
 		{
 			type = "recipe",
 			name = "s6x-fulgora-lightning-electrolysis-process",
-			category = "ph-electrolysis",
+			categories = {"ph-electrolysis"},
 			enabled = false,
 			energy_required = 2,
 			
@@ -194,7 +194,7 @@ if (mods['space-age']) then
 		{
 			type = "recipe",
 			name = "s6x-fulgora-holmium-electrolysis-process",
-			category = "ph-electrolysis",
+			categories = {"ph-electrolysis"},
 			enabled = false,
 			energy_required = 2,
 			

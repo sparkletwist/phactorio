@@ -1,6 +1,6 @@
-plastic_scrap = {type="item", name="plastic-bar", amount=1, probability = 0.25}
+plastic_scrap = {type="item", name="plastic-bar", amount=1, independent_probability = 0.25}
 if (mods['scrap-industry'] and settings.startup["scrap-industry-plastic"].value) then
-	plastic_scrap = {type="item", name="plastic-bits", amount=1, probability = 0.5}
+	plastic_scrap = {type="item", name="plastic-bits", amount=1, independent_probability = 0.5}
 end
 
 if (mods['scrap-industry']) then
@@ -9,7 +9,7 @@ if (mods['scrap-industry']) then
 			type = "recipe",
 			name = "s6x-circuit-scrap-melting",
 			icon = "__pHactorio__/graphics/icons/circuit-scrap-melting.png",
-			category = "chemistry",
+			categories = {"chemistry"},
 			subgroup = "production-scrap",
 			order = "z[other]-a[ph]-a[circuit-scrap-melting]",
 			enabled = false,
@@ -50,7 +50,7 @@ if (mods['space-age']) then
 			type = "recipe",
 			name = "s6x-fulgora-scrap-melting",
 			icon = "__pHactorio__/graphics/icons/fulgora-scrap-melting.png",
-			category = "chemistry",
+			categories = {"chemistry"},
 			subgroup = (mods['scrap-industry'] and "production-scrap") or "fulgora-processes",
 			order = "z[other]-a[ph]-b[fulgora-scrap-melting]",
 			enabled = false,

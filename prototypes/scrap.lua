@@ -36,7 +36,7 @@ if (mods['scrap-chemistry']) then
 		{
 			type = "recipe",
 			name = "s6x-nitrate-waste-recovery",
-			category = (mods['space-age'] and "chemistry-or-cryogenics") or "chemistry",
+			categories = PHACTORIO.chemistry_or_cryogenics,
 			subgroup = "fluid-recipes",
 			order = PHACTORIO.recipe_order .. "-c[ammonia]-b[from-nitrate-waste]",
 			enabled = false,

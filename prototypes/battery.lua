@@ -7,10 +7,10 @@ end
 local carbon_ingredient, recycling_carbon_ingredient
 if (mods['space-age'] or mods['Voidcraft']) then
 	carbon_ingredient = {type = "item", name = "carbon", amount = 1}
-	recycling_carbon_ingredient = {type = "item", name = "carbon", amount = 1, probability = 0.25, show_details_in_recipe_tooltip = false}
+	recycling_carbon_ingredient = {type = "item", name = "carbon", amount = 1, independent_probability = 0.25, show_details_in_recipe_tooltip = false}
 else
 	carbon_ingredient = {type = "item", name = PHACTORIO.coal_ingredient, amount = 2}
-	recycling_carbon_ingredient = {type = "item", name = PHACTORIO.coal_ingredient, amount = 1, probability = 0.5, show_details_in_recipe_tooltip = false}
+	recycling_carbon_ingredient = {type = "item", name = PHACTORIO.coal_ingredient, amount = 1, independent_probability = 0.5, show_details_in_recipe_tooltip = false}
 end
 
 local alk_acc = util.table.deepcopy(data.raw.recipe["accumulator"])
@@ -43,7 +43,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "alkaline-battery",
-		category = (mods['space-age'] and "chemistry-or-cryogenics") or "chemistry",
+		categories = PHACTORIO.chemistry_or_cryogenics,
 		energy_required = 4,
 		enabled = false,
 		ingredients =
@@ -78,7 +78,7 @@ data:extend({
 	},
 })
 
-if (mods["quality"]) then
+if (mods["recycler"]) then
 	data:extend({
 		{
 			type = "recipe",
@@ -86,18 +86,18 @@ if (mods["quality"]) then
 			localised_name = {"recipe-name.recycling", {"item-name.alkaline-battery"}},
 			icons = {
 			  {
-				icon = "__quality__/graphics/icons/recycling.png"
+				icon = "__recycler__/graphics/icons/recycling.png"
 			  },
 			  {
 				icon = "__pHactorio__/graphics/icons/alkaline-battery.png",
 				scale = 0.4
 			  },
 			  {
-				icon = "__quality__/graphics/icons/recycling-top.png"
+				icon = "__recycler__/graphics/icons/recycling-top.png"
 			  }
 			},
 			subgroup = "other",
-			category = "recycling",
+			categories = {"recycling"},
 			hidden = true,
 			enabled = true,
 			unlock_results = false,
@@ -107,9 +107,9 @@ if (mods["quality"]) then
 			ingredients = {{type = "item", name = "alkaline-battery", amount = 1}},
 			results =
 			{
-			  {type = "item", name = "iron-plate", amount = 1, probability = 0.25, show_details_in_recipe_tooltip = false},
+			  {type = "item", name = "iron-plate", amount = 1, independent_probability = 0.25, show_details_in_recipe_tooltip = false},
 			  recycling_carbon_ingredient,
-			  {type = "item", name = "ph-naoh", amount = 1, probability = 0.25, show_details_in_recipe_tooltip = false},
+			  {type = "item", name = "ph-naoh", amount = 1, independent_probability = 0.25, show_details_in_recipe_tooltip = false},
 			}
 		},
 	})
@@ -135,7 +135,7 @@ if (mods['space-age']) then
 		{
 			type = "recipe",
 			name = "lithium-battery",
-			category = "chemistry-or-cryogenics",
+			categories = PHACTORIO.chemistry_or_cryogenics,
 			energy_required = 8,
 			enabled = false,
 			ingredients =
@@ -177,18 +177,18 @@ if (mods['space-age']) then
 			localised_name = {"recipe-name.recycling", {"item-name.lithium-battery"}},
 			icons = {
 			  {
-				icon = "__quality__/graphics/icons/recycling.png"
+				icon = "__recycler__/graphics/icons/recycling.png"
 			  },
 			  {
 				icon = "__pHactorio__/graphics/icons/lithium-battery.png",
 				scale = 0.4
 			  },
 			  {
-				icon = "__quality__/graphics/icons/recycling-top.png"
+				icon = "__recycler__/graphics/icons/recycling-top.png"
 			  }
 			},
 			subgroup = "other",
-			category = "recycling",
+			categories = {"recycling"},
 			hidden = true,
 			enabled = true,
 			unlock_results = false,
@@ -198,10 +198,10 @@ if (mods['space-age']) then
 			ingredients = {{type = "item", name = "lithium-battery", amount = 1}},
 			results =
 			{
-				{type = "item", name = "copper-plate", amount = 1, probability = 0.25, show_details_in_recipe_tooltip = false},				
-				{type = "item", name = "low-density-structure", amount = 1, probability = 0.25, show_details_in_recipe_tooltip = false},
-				{type = "item", name = "superconductor", amount = 1, probability = 0.25, show_details_in_recipe_tooltip = false},
-				{type = "item", name = "lithium", amount = 1, probability = 0.5, show_details_in_recipe_tooltip = false},
+				{type = "item", name = "copper-plate", amount = 1, independent_probability = 0.25, show_details_in_recipe_tooltip = false},				
+				{type = "item", name = "plastic-bar", amount = 1, independent_probability = 0.25, show_details_in_recipe_tooltip = false},
+				{type = "item", name = "superconductor", amount = 1, independent_probability = 0.25, show_details_in_recipe_tooltip = false},
+				{type = "item", name = "lithium", amount = 1, independent_probability = 0.5, show_details_in_recipe_tooltip = false},
 			}
 		},
 	})

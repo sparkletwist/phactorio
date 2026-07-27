@@ -12,7 +12,7 @@ if (mods['space-age']) then
 		{
 			type = "recipe",
 			name = "ph-cao",
-			category = "smelting",
+			categories = {"smelting"},
 			auto_recycle = false,
 			energy_required = 3.2,
 			ingredients = {{type = "item", name = "calcite", amount = 1}},
@@ -83,7 +83,7 @@ data:extend({
 		enabled = false,
 		auto_recycle = false,
 		energy_required = 1 + ((mods['space-age'] and 0) or 4),
-		category = (mods['space-age'] and "chemistry-or-cryogenics") or "chemistry",
+		categories = PHACTORIO.chemistry_or_cryogenics,
 		ingredients =
 		{
 			{type = "fluid", name = "water", amount = 20},
@@ -110,7 +110,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "ammonia",
-		category = (mods['space-age'] and "chemistry-or-cryogenics") or "chemistry",
+		categories = PHACTORIO.chemistry_or_cryogenics,
 		subgroup = "fluid-recipes",
 		order = PHACTORIO.recipe_order .. "-c[ammonia]",
 		enabled = false,
@@ -152,7 +152,7 @@ if (mods['scrap-chemistry']) then
 				{icon=data.raw.fluid["methane"].icon, shift={-12,-12}, scale=0.4},
 				{icon=data.raw.fluid["ammonia"].icon, draw_background=true},
 			},	
-			category = (mods['space-age'] and "chemistry-or-cryogenics") or "chemistry",
+			categories = PHACTORIO.chemistry_or_cryogenics,
 			subgroup = "fluid-recipes",
 			order = PHACTORIO.recipe_order .. "-c[ammonia]-a[methane]",
 			enabled = false,

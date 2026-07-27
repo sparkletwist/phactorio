@@ -30,7 +30,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "ph-hno3",
-		category = (mods['space-age'] and "chemistry-or-cryogenics") or "chemistry",
+		categories = PHACTORIO.chemistry_or_cryogenics,
 		subgroup = "fluid-recipes",
 		order = PHACTORIO.recipe_order .. "-b[hno3]",
 		enabled = false,
@@ -97,8 +97,7 @@ if (mods['space-age']) then
 		{
 			type = "recipe",
 			name = "ph-ch3cooh",
-			category = "chemistry",
-			additional_categories = { "organic" },
+			categories = { "chemistry", "organic" },
 			subgroup = "fluid-recipes",
 			order = PHACTORIO.recipe_order .. "-c[ch3cooh]",
 			enabled = false,
@@ -135,7 +134,7 @@ if (mods['space-age']) then
 		{
 			type = "recipe",
 			name = "ph-hf",
-			category = "cryogenics",
+			categories = {"cryogenics"},
 			subgroup = "fluid-recipes",
 			order = PHACTORIO.recipe_order .. "-d[hf]",
 			enabled = false,
