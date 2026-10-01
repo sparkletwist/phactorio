@@ -497,3 +497,19 @@ if (mods['Voidcraft']) then
 		end
 	end
 end
+
+if (mods['IridescentIndustry'] and IRIDESCENT.azoth_enabled) then
+	data:extend({
+		{	
+			type = "technology",
+			name = "s6x-azoth-acid",
+			icon = "__pHactorio__/graphics/technology/azoth-acid.png",
+			icon_size = 256,
+			effects = {
+				{ type = "unlock-recipe", recipe = "s6x-clean-azoth-acid" },
+			},
+			prerequisites = {"s6x-azoth", "s6x-nitric-acid"},
+			unit = IRIDESCENT.prismatic_full_science_unit(200)
+		}
+	})
+end

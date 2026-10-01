@@ -94,7 +94,7 @@ data:extend({
 		  { size = 64, filename = "__pHactorio__/graphics/icons/variation/biter-egg-preserved-3.png", scale = 0.5, mipmap_count = 4 },
 		},
 		
-		fuel_category = "chemical",
+		fuel_categories = {"chemical"},
 		fuel_value = "6MJ",
 		subgroup = "agriculture-products",
 		order = "c[eggs]-a[biter-egg]-a[ph]-a[preserved]",

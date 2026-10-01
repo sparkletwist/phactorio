@@ -32,9 +32,6 @@ if PHACTORIO.kiln_smelting then
 			}
 		}
 	})
-
-	local pickled_steel = fds_recipe.find("s6x-steel-plate-from-pickled")
-	pickled_steel.category = "kiln-smelting"
 else
 	data:extend({
 		{

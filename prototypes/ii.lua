@@ -7,3 +7,17 @@ if (IRIDESCENT.air_purification) then
 	fds_recipe.modify_ingredient(rf, "sulfuric-acid", {type="item", name="ph-naoh", amount=2})
 end
 
+if (IRIDESCENT.azoth_enabled) then
+	local clean = util.table.deepcopy(data.raw.recipe["s6x-clean-azoth"])
+	
+	clean.icon = "__pHactorio__/graphics/icons/fluid/azoth-clean-acid.png"
+	clean.name = "s6x-clean-azoth-acid"
+	clean.order = clean.order .. "-a[ph]-a[acid]"
+	
+	clean.energy_required = math.floor(clean.energy_required/2)
+	
+	fds_recipe.modify_ingredient(clean, "water", {type="fluid", name="ph-hno3", amount=10})
+	
+	data:extend({clean})
+end
+
